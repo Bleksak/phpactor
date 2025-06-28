@@ -13,6 +13,10 @@ Features:
   - Search filtering (as applicable to autocomplete, name importing etc)
     @dantleech
 
+Bug fixes:
+  - Fix parameter type resolution priority @dantleech
+  - Fix completion rendering when snippets are disabled @mamazu
+
 ## 2025.04.17.0
 
 Improvements:
