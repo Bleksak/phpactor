@@ -1,12 +1,37 @@
 Changelog
 =========
 
-## matser
+## master
+
+BREAKING
+
+  - VIM plugin: Local `.phpactor.json` configuration files are no longer loaded by
+    default. If you use the VIM plugin you **must** explicitly trust the
+    configuration file with `:PhpactorTrust`.
+
+Improvements:
+
+  - Improved inlay type hints #2825 @dantleech
+  - Improve static analysis performance in some cases #2929 @dantleech
+
+Security:
+
+  - Ask permission before loading project-level `.phpactor.json` @dantleech
+
+Bug fixes:
+
+  - rename: Do not throw error if there is a reference to a now-non-existing file. @dantleech
+
+## 2025-07-25.0
 
 Improvements:
 
   - Extract document highlighter to own module and add config option to
     disable it @dantleech
+  - Fix false diagnostic for missing `__destruct` return type @przepompownia #2900
+  - Add depth info to `worse:dump-ast` command @mamazo #2897
+  - Ensure that stub locator results are cached in-memory @dantleech #2911
+  - Upload PHAR as artifact on builds @drzraf #2915
 
 Features:
 
@@ -14,8 +39,11 @@ Features:
     @dantleech
 
 Bug fixes:
+
+  - Require `ext-tokenizer` (fixes nixos distribution) @drupol
+  - Don't complete HEREDOC identifier @przepompownia #2909
   - Fix parameter type resolution priority @dantleech
-  - Fix completion rendering when snippets are disabled @mamazu
+  - Fix completion rendering when snippets are disabled @mamazu #2898
 
 ## 2025.04.17.0
 
